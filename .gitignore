@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+
+# buildozer 构建产物
+bin/
+.buildozer/
+
+# 系统文件
+.DS_Store
+Thumbs.db
