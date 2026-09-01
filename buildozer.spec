@@ -12,8 +12,8 @@ source.include_exts = py,png,jpg,kv,atlas
 
 version = 1.0.0
 
-# 依赖：Python3 + Kivy（锁定 Python 3.11，Kivy 2.3.1 尚不兼容 3.14）
-requirements = python3==3.11.9,kivy==2.3.1
+# 依赖：Python3 + Kivy
+requirements = python3,kivy==2.3.1
 
 orientation = portrait
 fullscreen = 0
@@ -30,11 +30,17 @@ android.api = 34
 android.minapi = 21
 android.ndk_api = 21
 
+# NDK 版本（p4a v2024.01.21 配套 r25c）
+android.ndk = 25c
+
 # 支持架构（主流手机均为 arm64）
 android.archs = arm64-v8a,armeabi-v7a
 
 # 允许打包时自动接受 SDK 许可（CI 必需）
 android.accept_sdk_license = True
+
+# 锁定 python-for-android 到 v2024.01.21（用 Python 3.11.5，兼容 Kivy 2.3.1）
+p4a.branch = v2024.01.21
 
 [buildozer]
 
