@@ -12,8 +12,8 @@ source.include_exts = py,png,jpg,kv,atlas
 
 version = 1.0.0
 
-# 依赖：Python3 + Kivy
-requirements = python3,kivy==2.3.1
+# 依赖：Python3 + Kivy（锁定 Python 3.11，Kivy 2.3.1 尚不兼容 3.14）
+requirements = python3==3.11.9,kivy==2.3.1
 
 orientation = portrait
 fullscreen = 0
