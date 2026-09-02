@@ -25,6 +25,10 @@ from kivy.uix.popup import Popup
 from kivy.clock import Clock
 from kivy.metrics import dp
 from kivy.core.window import Window
+from kivy.core.text import LabelBase
+
+# 注册中文字体（Noto Sans SC，开源 OFL 许可），覆盖 Kivy 默认字体以支持中文显示
+LabelBase.register(name="Roboto", fn_regular="NotoSansSC.ttf")
 
 # ===================== 13 个研究方向 =====================
 TOPICS = [
