@@ -43,6 +43,9 @@ android.accept_sdk_license = True
 # python-for-android v2026.05.09（支持新 Android/NDK r28c）
 p4a.branch = v2026.05.09
 
+# 本地 recipe（修复 Python 3.12 在 NDK r28c 上 grpmodule 编译失败）
+p4a.local_recipes = local_recipes
+
 [buildozer]
 
 log_level = 2
