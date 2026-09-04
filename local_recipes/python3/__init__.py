@@ -11,8 +11,23 @@ class Python3Recipe(Python3RecipeBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.configure_args = list(self.configure_args)
-        if "ac_cv_header_grp_h=no" not in self.configure_args:
-            self.configure_args.append("ac_cv_header_grp_h=no")
+        # NDK r28c 移除了 grp/pwd/crypt/部分 posix 函数声明，
+        # 而 Python 3.11/3.12 仍会调用它们。这些系统用户管理模块对本应用无用，全部禁用。
+        for flag in (
+            "ac_cv_header_grp_h=no",        # grp 模块
+            "ac_cv_func_getgrouplist=no",   # posix 模块
+            "ac_cv_func_initgroups=no",     # posix 模块
+            "ac_cv_header_pwd_h=no",        # pwd 模块
+            "ac_cv_func_getpwent=no",
+            "ac_cv_func_setpwent=no",
+            "ac_cv_func_endpwent=no",
+            "ac_cv_func_getpwnam=no",
+            "ac_cv_func_getpwuid=no",
+            "ac_cv_header_crypt_h=no",      # crypt 模块
+            "ac_cv_func_crypt=no",
+        ):
+            if flag not in self.configure_args:
+                self.configure_args.append(flag)
 
 
 recipe = Python3Recipe()
