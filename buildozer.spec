@@ -34,8 +34,8 @@ android.ndk_api = 21
 # NDK 版本（r28c 支持 Android 15+ 的 16KB 内存页对齐）
 android.ndk = 28c
 
-# 支持架构（主流手机均为 arm64）
-android.archs = arm64-v8a,armeabi-v7a
+# 支持架构（现代手机均为 64 位 arm64，armeabi-v7a 32位已淘汰且与 NDK r28c 编译不兼容）
+android.archs = arm64-v8a
 
 # 允许打包时自动接受 SDK 许可（CI 必需）
 android.accept_sdk_license = True
