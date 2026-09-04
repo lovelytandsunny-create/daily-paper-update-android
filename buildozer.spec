@@ -13,7 +13,8 @@ source.include_exts = py,png,jpg,kv,atlas,ttf,otf
 version = 1.1.0
 
 # 依赖：Python 3.12 + Kivy（锁定 Python 3.12，因 Kivy 2.3.1 不兼容 Python 3.13+）
-requirements = python3==3.12.10,kivy==2.3.1
+# hostpython3 必须与 python3 版本一致
+requirements = python3==3.12.10,hostpython3==3.12.10,kivy==2.3.1
 
 orientation = portrait
 fullscreen = 0
